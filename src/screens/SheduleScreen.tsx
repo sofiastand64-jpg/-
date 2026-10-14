@@ -49,11 +49,22 @@ const mockLessons: Lesson[]= [
     },
 
 
-    rt default function ScheduleScreen() {
-        turn (
+    export default function ScheduleScreen() {
+        return (
         <div className="min-h-screen bg-gray-50 ph-24">
-            <header className ="bg-white border-b border-gray-100 px-4 py-4 sticky top-0 z-10" 
-            <h1 className="text-xl font-bold text-gray-900">MySchedule></h1>
+            <header className ="bg-white border-b border-gray-100 px-4 py-4 sticky top-0 z-10">
+            <h1 className="text-xl font-bold text-gray-900">MySchedule</h1>
             </header>
+
+            <main className="p-4">
+                {DAYS.map((day) => (
+                    <DayGroup
+                    key={day.key}
+                    day={day.key}
+                    lessons ={mockLessons.filter((1) => 1.day === day.key)}
+                    />
+                    ))}
+            </main>
         </div>
-        )
+        );
+           }

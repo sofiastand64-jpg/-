@@ -3,6 +3,9 @@ import {DAYS} from "../types";
 import LessonCard from "./LessonCard";
 
 iterface DayGroupProps {
+    day: DayOfWeek;
+    lessons: Lesson[];
+}
 
 
 
@@ -23,7 +26,7 @@ iterface DayGroupProps {
                     {isToday && <span className="ml-2 text-xs">(сегодня)</span>}
                     </h2>
                     {lessons.length === 0 ? (
-                        
+
                     )}
             </section>
         )

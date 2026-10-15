@@ -33,3 +33,28 @@ export default function LessonCard({ lesson }: LessonCardProps) {
     </div>
   );
 }
+<div className="flex gap-2 mt-3 pt-3 border-t border-gray-100">
+  /*Кнопка изменения состояния задания на пару*/
+  lesson.task && (
+    <button
+    onClick={() => dispatch(toggleTaskDone(lesson.id))}
+    className="text-xs px-3 py-1 rounded bg-green-50 text-greeen-700 font-medium"
+    > 
+    {lesson.taskDone ? "Снять отметку": "Выполнено"}
+    </buton>
+    )
+  }
+  {/* Кнопка для вызова модалки изменения задания на пару*/ }
+  <button
+  onClick={() => onEdit(lesson)}
+  className="text-xs px-3 py-1 rounded bg-gray-50 text-gray-700 font-medium"
+  >
+    Изменить
+  </button>
+  {/* кнопкa удаления пары */}
+  <button  
+  onClick={()=>dispatch(deleteLesson(lesson.id))}
+  >
+    Удалить
+  </button>
+</div>

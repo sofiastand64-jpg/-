@@ -2,19 +2,17 @@ import type {DayOfWeek, Lesson} from "../types";
 import {DAYS} from "../types";
 import LessonCard from "./LessonCard";
 
-iterface DayGroupProps {
+interface DayGroupProps {
     day: DayOfWeek;
     lessons: Lesson[];
+    onEdit: (lesson: Lesson)=> void;
 }
 
-
-
-
     export default function DayGroup({ day, lessons}: DayGroupProps){
-        const today = new date();
+        const today = new Date();
 
-        const todayIndex = today.getday () === 0 ? 6 : today.getDay() - 1;
-        const isToday=DAYS[todayIndex]?.key ===day;
+        const todayIndex = today.getday() === 0 ? 6 : today.getDay() - 1;
+        const isToday = DAYS[todayIndex]?.key ===day;
         const dayLabel = DAYS.find((d)) => d.key === day)?.label ?? day;
         return (
             <section className="mb-6">
@@ -26,7 +24,10 @@ iterface DayGroupProps {
                     {isToday && <span className="ml-2 text-xs">(сегодня)</span>}
                     </h2>
                     {lessons.length === 0 ? (
-
+                      <P clcassName="text-sm text-gray-400 italic">Занятий нет! Ура!</p>
+                    ) : (
+                        lessons.map((lesson) =>{<LessondCard key={lesson.id} Lesson={lesson} />)
                     )}
-            </section>
-        )
+                 </section>
+        );
+    }

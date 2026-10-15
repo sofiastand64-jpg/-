@@ -18,8 +18,12 @@ export interface Lesson {
   taskDone: boolean;
 }
 
-export const DAYS:
-{ key: 'monday', label: 'Понедельник' },
-{ key: 'tuesday', label: 'Вторник' },
-{key: 'wednesday',label:'Среда'}, 
-{ key: 'mo'}
+export const DAYS: 
+{ key:DayOfWeek, label:string }[] = [
+{ key: "monday", label: "Понедельник" },
+{ key: "tuesday", label: "Вторник" },
+{key: "wednesday",label:  "Среда"}, 
+{ key: "thursday", label: "Четверг" }, 
+{key : "friday",   label:  "Пятница"},
+{key:"saturday", label: "Суббота"},
+ ];

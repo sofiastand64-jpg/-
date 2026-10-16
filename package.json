@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@notifee/react-native": "^9.1.8",
     "@reduxjs/toolkit": "^2.13.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "react-native-sqlite-storage": "^6.0.1",
     "react-redux": "^9.3.0"
   },
   "devDependencies": {
